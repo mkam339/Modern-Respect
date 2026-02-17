@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Respect | القوانين الرسمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS - التصميم الفاخر */
+        :root {
+            --primary: #8e44ad;
+            --secondary: #2c3e50;
+            --accent: #00d2ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --text: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
+        body {
+            background: radial-gradient(circle at top, #1a1a2e, #16213e, #0f0c29);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Header */
+        header { text-align: center; margin-bottom: 60px; animation: fadeIn 1.2s ease; }
+        .logo { width: 140px; filter: drop-shadow(0 0 20px var(--primary)); transition: 0.5s; cursor: pointer; }
+        .logo:hover { transform: scale(1.1) rotate(3deg); }
+        h1 { font-size: 3.5rem; font-weight: 900; margin-top: 20px; letter-spacing: -1px; }
+        h1 span { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
+
+        /* Tabs Navigation */
+        .tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+        .tab-btn {
+            background: var(--glass); border: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 30px; border-radius: 12px; color: white; cursor: pointer;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); backdrop-filter: blur(10px);
+            font-weight: bold; font-size: 1rem;
+        }
+        .tab-btn i { margin-left: 8px; }
+        .tab-btn:hover, .tab-btn.active {
+            background: var(--primary); transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(142, 68, 173, 0.4); border-color: transparent;
+        }
+
+        /* Content Area */
+        .content-wrapper { position: relative; min-height: 400px; }
+        .tab-content { display: none; animation: slideUp 0.6s ease forwards; }
+        .tab-content.active { display: block; }
+
+        /* Rule Cards */
+        .card {
+            background: var(--glass); border-radius: 20px; padding: 30px;
+            border: 1px solid rgba(255,255,255,0.05); margin-bottom: 30px;
+            backdrop-filter: blur(10px); transition: 0.3s;
+        }
+        .card:hover { border-color: var(--primary); background: rgba(255,255,255,0.05); }
+        .card h2 { color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid var(--primary); display: inline-block; padding-bottom: 5px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .item { background: rgba(0,0,0,0.2); padding: 20px; border-radius: 15px; border-right: 4px solid var(--primary); }
+        .item h3 { color: var(--accent); margin-bottom: 10px; font-size: 1.1rem; }
+
+        /* Table Style */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 15px; text-align: right; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th { color: var(--primary); font-size: 1.1rem; }
+        tr:hover { background: rgba(255,255,255,0.02); }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .tab-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="logo.png" alt="MR" class="logo">
+        <h1>MODERN <span>RESPECT</span></h1>
+        <p>بوابتكم لتجربة الرول بلاي الأكثر واقعية</p>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('police')"><i class="fas fa-shield-halved"></i> قوانين الشرطة</button>
+        <button class="tab-btn" onclick="showTab('server')"><i class="fas fa-server"></i> قوانين السيرفر</button>
+        <button class="tab-btn" onclick="showTab('admin')"><i class="fas fa-user-shield"></i> قوانين الرقابة</button>
+        <button class="tab-btn" onclick="showTab('bans')"><i class="fas fa-gavel"></i> نظام العقوبات</button>
+    </div>
+
+    <div class="content-wrapper">
+        
+        <section id="police" class="tab-content active">
+            <div class="card">
+                <h2><i class="fas fa-handcuffs"></i> المداهمات والخدمات</h2>
+                <div class="grid">
+                    <div class="item">
+                        <h3>إيقاف الخدمات</h3>
+                        <p>يحق للضابط وما فوق برفع طلب إيقاف خدمات إلى المحكمة ولا ينفذ إلا بحكم قضائي.</p>
+                    </div>
+                    <div class="item">
+                        <h3>المداهمة</h3>
+                        <p>يتم طلب المداهمة من الضباط وما فوق ولا تتم إلا بأمر تنفيذ صريح من المحكمة.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-gun"></i> قواعد الاشتباك</h2>
+                <div class="grid">
+                    <div class="item"><h3>مبدأ السلاح</h3><p>لا يتم إخراج السلاح إلا بعد قيام المجرم بإخراج سلاحه أولاً.</p></div>
+                    <div class="item"><h3>فئات السلاح</h3><p>يجب استخدام نفس فئة السلاح (خفيف/ثقيل) المستخدم من المجرم.</p></div>
+                    <div class="item"><h3>حقوق الموقوف</h3><p>يجب تلاوة حقوق الموقوف فور القبض عليه: "لديك الحق في الصمت، أي شيء تقوله..."</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="server" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-scale-balanced"></i> قوانين الحياة الواقعية</h2>
+                <div class="grid">
+                    <div class="item"><h3>NLR (الحياة الجديدة)</h3><p>في حال الإغماء الكامل لا يمكنك الكلام أو تذكر الأحداث السابقة.</p></div>
+                    <div class="item"><h3>NVL (تقدير الحياة)</h3><p>عدم الخوف بشكل واقعي على حياتك عند التهديد بالسلاح يعتبر مخالفة كبرى.</p></div>
+                    <div class="item"><h3>Metagaming</h3><p>يمنع استخدام أي معلومة حصلت عليها خارج المدينة (ديسكورد/بثوث) داخل اللعبة.</p></div>
+                </div>
+            </div>
+            <div class="card">
+                <h2><i class="fas fa-ban"></i> المحظورات العامة</h2>
+                <div class="item" style="border-right: 4px solid #e74c3c;">
+                    <p>يمنع القذف، الشتم، الطائفية، أو السياسة. (العقوبة: باند نهائي فوراً).</p>
+                    <p>يمنع استخدام الشخصيات الافتراضية إلا عبر المتجر الرسمي.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-user-gear"></i> ميثاق الرقابة</h2>
+                <div class="grid">
+                    <div class="item"><h3>تسجيل الحضور</h3><p>يمنع التواجد كرقابي بدون تسجيل الدخول في دفتر الحضور الرسمي.</p></div>
+                    <div class="item"><h3>الشفافية</h3><p>يمنع استخدام الخواص الإدارية أمام المواطنين أو محاسبة شخص بدون استدعائه للروم.</p></div>
+                    <div class="item"><h3>الدليل</h3><p>يجب تشغيل برنامج التصوير طوال فترة العمل الرقابي لتوثيق المخالفات.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bans" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-hourglass-half"></i> جدول العقوبات</h2>
+                <table>
+                    <thead>
+                        <tr><th>نوع المخالفة</th><th>المرة الأولى</th><th>المرة الثانية</th><th>المرة الثالثة</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>VDM / RDM</td><td>8 ساعات</td><td>يومين</td><td>نهائي</td></tr>
+                        <tr><td>عدم الخوف (NVL)</td><td>8 ساعات</td><td>يومين</td><td>أسبوع</td></tr>
+                        <tr><td>الستريم سنايب</td><td>يومين</td><td>أسبوع</td><td>نهائي</td></tr>
+                        <tr><td>القذف / هاك</td><td colspan="3" style="text-align:center; color:#e74c3c;">باند نهائي قطعي</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; opacity: 0.5; font-size: 0.8rem;">
+        &copy; 2026 Modern Respect Server | Crafted for Excellence
+    </footer>
+</div>
+
+<script>
+    /* JS - التفاعلية */
+    function showTab(tabId) {
+        // إخفاء المحتويات
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        
+        // تغيير حالة الأزرار
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // إظهار التاب المختار
+        document.getElementById(tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+        
+        // تأثير اهتزاز بسيط
+        window.scrollTo({ top: 100, behavior: 'smooth' });
+    }
+
+    // تفاعل مع الماوس لخلفية الكروت
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const x = e.pageX - card.offsetLeft;
+            const y = e.pageY - card.offsetTop;
+            card.style.setProperty('--x', x + 'px');
+            card.style.setProperty('--y', y + 'px');
+        });
+    });
+</script>
+
+</body>
+</html>
